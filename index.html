@@ -1,23 +1,1497 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+
+
+    <!-- 구조화 데이터 (JSON-LD: BreadcrumbList, Article, FAQPage) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "홈",
+              "item": "https://dental.reliabledone.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "치과 금융 가이드",
+              "item": "https://dental.reliabledone.com/guide/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "치아 보험 사랑니 발치 보장 분석",
+              "item": "https://dental.reliabledone.com/wisdom-tooth-coverage"
+            }
+          ]
+        },
+        {
+          "@type": "Article",
+          "headline": "치아 보험 사랑니 발치 보장 및 실비 청구 기준 2026 총정리",
+          "description": "2026년 개정된 건강보험 급여 항목과 치아보험 약관을 기반으로 매복사랑니 발치비용, 실비 보상 여부, 비급여 지혈제 및 수술비 특약 활용법을 상세 분석한 가이드입니다.",
+          "inLanguage": "ko-KR",
+          "mainEntityOfPage": "https://dental.reliabledone.com/wisdom-tooth-coverage",
+          "datePublished": "2026-01-15T09:00:00+09:00",
+          "dateModified": "2026-02-10T14:30:00+09:00",
+          "author": {
+            "@type": "Organization",
+            "name": "의료금융정보 리서치센터"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "덴탈인슈 리서치"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "사랑니 발치도 민영 치아보험에서 보장받을 수 있나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "대부분의 민영 치아보험 주계약은 충치, 신경치료, 크라운, 임플란트 등 보존 및 보철치료를 주된 담보로 구성하기 때문에 단순 사랑니 발치는 직접적인 지급 대상에서 제외되는 경우가 많습니다. 다만 가입한 상품 내에 영구치 발거 치료비 특약이나 질병수술비 특약이 포함되어 있는 경우, 또는 치조골 절제가 동반되는 난발치 및 매복사랑니 수술의 경우 약관에 따라 정액 수술비나 발치 지원금이 지급될 수 있습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "사랑니 발치 비용을 실손의료보험(실비)으로 청구할 수 있나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "네, 가능합니다. 사랑니 발치는 국민건강보험 요양급여 대상(급여 항목)으로 분류되므로, 치료 목적으로 치과의원이나 종합병원에서 발치한 경우 발생한 급여 본인부담금에 대해 실손의료보험의 보상을 받을 수 있습니다. 단, 비급여 항목으로 분류되는 콜라겐 지혈제나 특수 잇몸 봉합 재료 등은 가입 시점별 실손보험 약관의 치과 비급여 면책 규정에 따라 보상에서 제외될 수 있습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "매복사랑니 발치 시 1개당 평균적인 진료비와 본인부담금은 얼마인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "2026년 국민건강보험 수가 기준, 동네 치과의원에서 완전매복 사랑니를 발치할 경우 초진 진찰료, 파노라마 및 치과 CT 촬영, 국소마취, 치조골 삭제 및 치아 분할술을 포함하여 총 진료비는 약 6만 원에서 10만 원 선으로 산정되며, 이 중 환자가 부담하는 급여 본인부담금은 약 3만 원에서 5만 원 내외입니다. 병원급이나 대학병원 치과를 이용할 경우 종별 가산율이 적용되어 본인부담금이 7만 원에서 12만 원 이상으로 증가할 수 있습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "사랑니를 뽑기 직전에 치아보험에 가입해도 바로 혜택을 받을 수 있나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "치아보험은 가입 후 역선택을 방지하기 위해 90일간의 면책기간과 1년(12개월) 또는 2년의 감액기간(50% 지급)을 둡니다. 이미 치과에서 사랑니 발치 진단을 받았거나 잇몸 염증으로 치료 중인 상태에서 계약을 체결하면 고지의무 위반으로 계약이 해지되거나 보장이 거절될 수 있습니다. 따라서 치료 계획이 잡히기 전 최소 수개월 전에 미리 가입 조건을 점검해야 합니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "사랑니 발치 후 보험금 청구 시 치과에서 준비해야 할 필수 서류는 무엇인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "실손의료보험 청구를 위해서는 진료비 계산서 및 영수증, 진료비 세부내역서가 필수적입니다. 만약 질병수술비나 치아보험 발치 특약을 함께 청구한다면 질병분류코드(K01.1 등)와 구체적인 수술명(매복치 발치술, 치조골 성형 등)이 기재된 처방전, 진단서 또는 치과치료확인서를 발급받아 보험사 모바일 앱이나 홈페이지를 통해 접수하면 됩니다."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --primary-light: #e0f2fe;
+            --secondary: #0f766e;
+            --secondary-light: #ccfbf1;
+            --accent: #d97706;
+            --accent-light: #fef3c7;
+            --neutral-900: #0f172a;
+            --neutral-800: #1e293b;
+            --neutral-700: #334155;
+            --neutral-600: #475569;
+            --neutral-500: #64748b;
+            --neutral-300: #cbd5e1;
+            --neutral-200: #e2e8f0;
+            --neutral-100: #f1f5f9;
+            --neutral-50: #f8fafc;
+            --surface: #ffffff;
+            --danger: #e11d48;
+            --danger-light: #ffe4e6;
+            --success: #059669;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            background-color: var(--neutral-50);
+            color: var(--neutral-800);
+            line-height: 1.85;
+            font-size: 17px;
+            letter-spacing: -0.015em;
+            word-break: keep-all;
+        }
+
+        .container {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 헤더 스타일 */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--neutral-200);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .brand-logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-logo span {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--neutral-700);
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* 빵부스러기 네비게이션 */
+        .breadcrumbs {
+            padding: 16px 0;
+            font-size: 0.85rem;
+            color: var(--neutral-500);
+        }
+
+        .breadcrumbs ol {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .breadcrumbs li:not(:last-child)::after {
+            content: "/";
+            margin-left: 8px;
+            color: var(--neutral-300);
+        }
+
+        .breadcrumbs a {
+            color: var(--neutral-600);
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        /* 히어로 섹션 */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+            color: #ffffff;
+            padding: 64px 0 56px 0;
+            border-radius: var(--radius-lg);
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.18) 0%, rgba(255,255,255,0) 70%);
+            pointer-events: none;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: rgba(2, 132, 199, 0.35);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #7dd3fc;
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.35;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            line-height: 1.7;
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        .hero-meta span strong {
+            color: #f1f5f9;
+        }
+
+        /* 본문 레이아웃 */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 310px;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 960px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+
+        /* 메인 콘텐츠 영역 */
+        article {
+            background-color: var(--surface);
+            padding: 44px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--neutral-200);
+        }
+
+        @media (max-width: 640px) {
+            article {
+                padding: 24px 18px;
+            }
+        }
+
+        .section-block {
+            margin-bottom: 50px;
+        }
+
+        .section-block:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.65rem;
+            color: var(--neutral-900);
+            font-weight: 800;
+            line-height: 1.4;
+            margin-top: 10px;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--neutral-100);
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 70px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        h3 {
+            font-size: 1.28rem;
+            color: var(--neutral-800);
+            font-weight: 700;
+            margin: 32px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h3::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 18px;
+            background-color: var(--secondary);
+            border-radius: 3px;
+        }
+
+        h4 {
+            font-size: 1.08rem;
+            color: var(--neutral-700);
+            font-weight: 600;
+            margin: 22px 0 10px 0;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--neutral-700);
+            font-size: 1.02rem;
+            line-height: 1.9;
+        }
+
+        /* 인포박스 및 하이라이트 패널 */
+        .info-panel {
+            background-color: var(--neutral-50);
+            border-left: 4px solid var(--primary);
+            padding: 22px 24px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 24px 0;
+            border-top: 1px solid var(--neutral-200);
+            border-right: 1px solid var(--neutral-200);
+            border-bottom: 1px solid var(--neutral-200);
+        }
+
+        .info-panel.teal {
+            border-left-color: var(--secondary);
+            background-color: #f0fdfa;
+        }
+
+        .info-panel.amber {
+            border-left-color: var(--accent);
+            background-color: var(--accent-light);
+        }
+
+        .info-panel.rose {
+            border-left-color: var(--danger);
+            background-color: var(--danger-light);
+        }
+
+        .info-panel h4 {
+            margin-top: 0;
+            color: var(--neutral-900);
+            font-weight: 700;
+        }
+
+        .info-panel p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 데이터 테이블 */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin: 24px 0;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--neutral-200);
+            box-shadow: var(--shadow-sm);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+            min-width: 600px;
+            background-color: #ffffff;
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--neutral-800);
+            font-weight: 700;
+            padding: 14px 18px;
+            border-bottom: 2px solid var(--neutral-200);
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--neutral-200);
+            color: var(--neutral-700);
+            vertical-align: middle;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #fbfcfe;
+        }
+
+        tr:hover td {
+            background-color: #f1f5f9;
+        }
+
+        .badge-status {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .badge-covered {
+            background-color: #dcfce7;
+            color: #15803d;
+        }
+
+        .badge-partial {
+            background-color: #fef9c3;
+            color: #a16207;
+        }
+
+        .badge-noncovered {
+            background-color: #fee2e2;
+            color: #b91c1c;
+        }
+
+        /* 체크리스트 및 순서도 스타일 */
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .check-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            color: var(--neutral-700);
+        }
+
+        .check-list li::before {
+            content: "[확인]";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 28px 0;
+        }
+
+        .step-card {
+            display: flex;
+            gap: 18px;
+            background-color: var(--neutral-50);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--neutral-200);
+        }
+
+        .step-num {
+            background-color: var(--primary);
+            color: #ffffff;
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.95rem;
+        }
+
+        .step-content h4 {
+            margin: 0 0 6px 0;
+            color: var(--neutral-900);
+        }
+
+        .step-content p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--neutral-600);
+        }
+
+        /* 인터랙티브 계산기 모듈 */
+        .calc-widget {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid var(--primary-light);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            margin: 32px 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .calc-widget h3 {
+            margin-top: 0;
+            color: var(--primary-dark);
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 580px) {
+            .calc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .calc-group label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--neutral-700);
+            margin-bottom: 6px;
+        }
+
+        .calc-group select, .calc-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--neutral-300);
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            background-color: #ffffff;
+            color: var(--neutral-800);
+        }
+
+        .calc-group select:focus, .calc-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+        }
+
+        .calc-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary);
+            color: #ffffff;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .calc-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .calc-result {
+            margin-top: 20px;
+            padding: 18px;
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: var(--radius-md);
+            display: none;
+        }
+
+        .calc-result.active {
+            display: block;
+        }
+
+        .calc-result-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #166534;
+            margin-bottom: 8px;
+        }
+
+        .calc-result-value {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #15803d;
+        }
+
+        .calc-result-breakdown {
+            margin-top: 10px;
+            font-size: 0.88rem;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        /* FAQ 아코디언 스타일 */
+        .faq-container {
+            margin: 28px 0;
+        }
+
+        .faq-item {
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-md);
+            margin-bottom: 12px;
+            background-color: #ffffff;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--neutral-300);
+        }
+
+        .faq-header {
+            width: 100%;
+            text-align: left;
+            padding: 18px 20px;
+            background: none;
+            border: none;
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: var(--neutral-800);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .faq-header span.q-mark {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+
+        .faq-body {
+            padding: 0 20px 20px 20px;
+            color: var(--neutral-600);
+            font-size: 0.98rem;
+            line-height: 1.8;
+            display: none;
+            border-top: 1px solid var(--neutral-100);
+            padding-top: 14px;
+        }
+
+        .faq-item.active .faq-body {
+            display: block;
+        }
+
+        .faq-item.active .faq-header {
+            color: var(--primary-dark);
+            background-color: var(--neutral-50);
+        }
+
+        /* 사이드바 영역 */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar-card {
+            background-color: #ffffff;
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sidebar-card h3 {
+            margin-top: 0;
+            font-size: 1.15rem;
+            color: var(--neutral-900);
+            margin-bottom: 16px;
+        }
+
+        .sidebar-card h3::before {
+            display: none;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: 10px;
+            font-size: 0.92rem;
+        }
+
+        .toc-list a {
+            color: var(--neutral-600);
+            text-decoration: none;
+            display: block;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .toc-list a:hover {
+            color: var(--primary);
+            background-color: var(--neutral-100);
+        }
+
+        .quick-contact-box {
+            background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+            color: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            text-align: center;
+        }
+
+        .quick-contact-box h4 {
+            color: #ffffff;
+            margin-top: 0;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .quick-contact-box p {
+            color: #ccfbf1;
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+        }
+
+        .quick-contact-btn {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #0f766e;
+            padding: 10px 20px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .quick-contact-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* 외부 참조 링크 목록 */
+        .external-links {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--neutral-200);
+        }
+
+        .external-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .external-links li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .external-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .external-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* 태그 클라우드 */
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .tag-badge {
+            background-color: var(--neutral-100);
+            color: var(--neutral-700);
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            font-weight: 500;
+            border: 1px solid var(--neutral-200);
+        }
+
+        /* 푸터 */
+        footer {
+            background-color: var(--neutral-900);
+            color: var(--neutral-400);
+            padding: 50px 0 40px 0;
+            font-size: 0.88rem;
+            line-height: 1.7;
+            margin-top: 60px;
+            border-top: 1px solid var(--neutral-800);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 36px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        .footer-logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        footer h5 {
+            color: #f1f5f9;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer li {
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: var(--neutral-400);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid var(--neutral-800);
+            text-align: center;
+            font-size: 0.82rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="https://dental.reliabledone.com/" class="brand-logo">
+            덴탈인슈 리서치 <span>2026 개정판</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#section-basics">기본 개념 및 분류</a></li>
+                <li><a href="#section-comparison">치아보험 vs 실비</a></li>
+                <li><a href="#section-cost">예상 비용 및 요금표</a></li>
+                <li><a href="#section-calculator">비용 자가 계산기</a></li>
+                <li><a href="#section-claim">청구 서류 및 절차</a></li>
+                <li><a href="#section-faq">자주 묻는 질문</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container" style="margin-top: 24px;">
+    <!-- 빵부스러기 네비게이션 -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="https://dental.reliabledone.com/">홈</a></li>
+            <li><a href="https://dental.reliabledone.com/guide/">치과 금융 가이드</a></li>
+            <li aria-current="page">치아 보험 사랑니 발치 보장 분석</li>
+        </ol>
     </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-tag">2026년 최신 건강보험 요양급여 및 민영보험 약관 기준</div>
+            <h1>치아 보험 사랑니 발치 보장 및 실비 청구 기준 총정리</h1>
+            <p class="hero-desc">
+                단순 발치부터 잇몸을 절개하고 뼈를 깎는 완전 매복 사랑니 수술까지, 국민건강보험 급여 적용 범위와 민영 치아보험 및 실손의료보험의 중복 보상 여부, 비급여 지혈제 처리 기준과 실제 내돈내산 청구 노하우를 가장 투명하고 정확하게 분석해 드립니다.
+            </p>
+            <div class="hero-meta">
+                <span>작성 기준: <strong>2026년 2월 최신 개정판</strong></span>
+                <span>감수: <strong>의료금융 전문 리서치팀</strong></span>
+                <span>분류: <strong>치과 질병 수술 및 실손의료비 분석</strong></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 메인 그리드 레이아웃 -->
+    <div class="content-grid">
+        <!-- 메인 기사 아티클 -->
+        <article>
+            <!-- 섹션 1: 기본 개념과 사랑니 분류 -->
+            <section id="section-basics" class="section-block">
+                <h2>1. 사랑니 발치와 치아보험의 기본 구조 이해</h2>
+                <p>
+                    제3대구치라 불리는 사랑니는 현대인의 턱뼈 공간 부족으로 인해 올바른 방향으로 맹출하지 못하고 잇몸 속에 비스듬히 눕거나 갇히는 경우가 많습니다. 이러한 매복치는 인접 어금니의 치근 흡수를 유발하거나 치관주위염, 낭종, 치조골 파괴 등의 심각한 치과 질환을 야기하므로 외과적 발치 수술이 필수적입니다.
+                </p>
+                <p>
+                    많은 금융 소비자들이 궁금해하는 핵심 질문 중 하나는 바로 <strong>치아보험 가입 시 사랑니 발치 비용을 돌려받을 수 있는가</strong>입니다. 결론부터 정리하자면, 시중의 민영 치아보험 상품은 영구치의 기능 회복을 목적으로 하는 충치 치료(인레이, 온레이, 크라운) 및 보철치료(임플란트, 브릿지, 틀니)를 주계약의 중심 담보로 삼기 때문에, 본래 저작 기능을 온전히 수행하지 않는 제3대구치의 단순 발치는 약관상 면책 조항에 포함되는 경우가 일반적입니다.
+                </p>
+
+                <div class="info-panel teal">
+                    <h4>[의학적 및 보험 약관상 사랑니 발치 4단계 분류]</h4>
+                    <p>
+                        건강보험공단과 보험사 약관에서 구분하는 발치 난이도는 다음과 같으며, 난이도에 따라 요금 및 급여 수술 행위료가 차등 산정됩니다.
+                    </p>
+                    <ul class="check-list">
+                        <li><strong>단순 발치:</strong> 치관이 구강 내에 온전히 노출되어 있으며 별도의 절개나 치조골 삭제 없이 기구로 발거하는 경우</li>
+                        <li><strong>난발치:</strong> 치근의 이상 만곡, 유착, 치근 비대 등으로 인해 치아를 분할하거나 기구 조작이 복잡한 경우</li>
+                        <li><strong>부분 매복 발치:</strong> 치관의 일부가 잇몸 뼈나 점막에 덮여 있어 잇몸 절개와 부분적인 치아 분할술이 필요한 경우</li>
+                        <li><strong>완전 매복 발치:</strong> 치관의 3분의 2 이상 또는 전체가 치조골 내에 파묻혀 있어 광범위한 골 삭제와 고난도 치아 분할 및 봉합이 동반되는 경우</li>
+                    </ul>
+                </div>
+                <p>
+                    하지만 여기서 주목해야 할 점은 단순 치아보험 단일 상품에 국한되지 않고, 질병수술비 특약, 골절 및 외과 수술비, 그리고 무엇보다 <strong>실손의료보험(실비)</strong>과의 연계 방식을 이해하면 환자 본인부담금의 상당 부분을 보전받을 수 있다는 사실입니다.
+                </p>
+            </section>
+
+            <!-- 섹션 2: 치아보험 vs 실손의료보험 비교 -->
+            <section id="section-comparison" class="section-block">
+                <h2>2. 치아보험 vs 실손의료보험 사랑니 보장 차이점 및 중복 청구</h2>
+                <p>
+                    치과 치료비에 대한 보상 체계는 크게 <strong>국민건강보험(급여)</strong>, <strong>실손의료보험(실비)</strong>, 그리고 <strong>정액형 민영 치아보험</strong>의 3단계 계층으로 구성됩니다. 소비자들이 인터넷 커뮤니티인 디시인사이드 치아 갤러리, 에펨코리아(펨코), 보배드림 등에서 활발하게 공유하는 내돈내산 청구 후기를 살펴보면 실비와 치아보험의 성격을 명확히 구분하지 못해 혼란을 겪는 사례가 빈번합니다.
+                </p>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>구분 항목</th>
+                                <th>국민건강보험 (급여)</th>
+                                <th>실손의료보험 (실비)</th>
+                                <th>민영 치아보험 (정액형)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>보장 기본 성격</strong></td>
+                                <td>국가 기본 사회보험</td>
+                                <td>실제 발생 손해 비례 보상</td>
+                                <td>약관상 정해진 정액 약정금 지급</td>
+                            </tr>
+                            <tr>
+                                <td><strong>사랑니 단순 발치</strong></td>
+                                <td><span class="badge-status badge-covered">급여 적용 (약 70% 지원)</span></td>
+                                <td><span class="badge-status badge-covered">본인부담금 보상 가능</span></td>
+                                <td><span class="badge-status badge-noncovered">대부분 면책 (미지급)</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>매복사랑니 수술</strong></td>
+                                <td><span class="badge-status badge-covered">급여 적용 (난이도별 수가)</span></td>
+                                <td><span class="badge-status badge-covered">공제금액 제외 후 전액 환급</span></td>
+                                <td><span class="badge-status badge-partial">특약(질병수술/발거비) 시 지급</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>비급여 지혈제 (콜라겐)</strong></td>
+                                <td><span class="badge-status badge-noncovered">전액 본인부담</span></td>
+                                <td><span class="badge-status badge-partial">세대별 약관에 따라 상이</span></td>
+                                <td><span class="badge-status badge-noncovered">보장 제외</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>치과 CT 정밀 촬영</strong></td>
+                                <td><span class="badge-status badge-covered">매복치 신경 근접 시 급여</span></td>
+                                <td><span class="badge-status badge-covered">급여 본인부담금 보상</span></td>
+                                <td><span class="badge-status badge-noncovered">보장 제외</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>치과 실비 청구의 핵심 원리와 2026년 기준 쟁점</h3>
+                <p>
+                    대한민국 실손의료보험 약관 표준화(2009년 10월) 이후 판매된 모든 실비 상품(2세대, 3세대, 4세대 실손보험)은 공통적으로 <strong>치과 치료 중 국민건강보험 요양급여에 해당하는 본인부담금</strong>을 보상하도록 규정하고 있습니다. 사랑니 발치는 단순 미용 목적이 아닌 질병 예방 및 치료 목적의 의료행위로 인정되어 100% 건강보험 급여 항목으로 처리됩니다.
+                </p>
+                <p>
+                    따라서 발치 당일 치과에서 결제한 총 진료비 중 급여 항목에 해당하는 금액은 본인이 가입한 실손보험의 의원급/병원급 최소 공제금액(1만 원~2만 원 또는 급여 10~20% 해당액)을 차감한 뒤 그대로 환급받을 수 있습니다.
+                </p>
+
+                <div class="info-panel amber">
+                    <h4>[주의: 비급여 지혈 솜 및 콜라겐 플러그 실비 청구 논란]</h4>
+                    <p>
+                        매복 사랑니를 깊게 파내어 뼈를 깎아낸 부위의 빠른 회복과 건성치조와(드라이 소켓) 예방을 위해 치과에서 권유하는 비급여 지혈제(예: 아테로플러그, 테루플러그 등)는 1개당 약 1만 5천 원에서 4만 원 선의 비급여 요금이 부과됩니다. 실손의료보험 약관상 치과 치료의 비급여는 면책 대상으로 지정되어 있으므로, 원칙적으로 지혈제 비용은 실비 보상에서 제외될 가능성이 높습니다. 가입한 보험사 보상과 심사 기준에 따라 상이하므로 사전 상담이 필요합니다.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 섹션 3: 2026년 기준 예상 발치 비용 및 상세 견적 분석 -->
+            <section id="section-cost" class="section-block">
+                <h2>3. 2026년 사랑니 발치 비용 및 의료기관별 예상 요금표</h2>
+                <p>
+                    사랑니를 발치할 때 환자가 지불해야 하는 최종 가격은 의료기관의 종별 규모(의원, 병원, 종합병원, 상급종합병원 대학병원)와 수술 난이도, 방사선 영상 진단 방식(일반 파노라마 vs 콘빔 3차원 치과 CT)에 따라 결정됩니다. 다음은 2026년 국민건강보험 건강보험수가 통계를 반영한 평균적인 예상 견적표입니다.
+                </p>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>수술 및 발치 유형</th>
+                                <th>총 진료비용 (공단부담+본인부담)</th>
+                                <th>의원급 본인부담금 (환자 결제액)</th>
+                                <th>대학병원 본인부담금 (특진/가산율)</th>
+                                <th>실비 청구 후 체감 부담금</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>단순 사랑니 발치</strong></td>
+                                <td>약 35,000원 ~ 45,000원</td>
+                                <td><strong>약 11,000원 ~ 15,000원</strong></td>
+                                <td>약 28,000원 ~ 40,000원</td>
+                                <td>약 0원 ~ 5,000원</td>
+                            </tr>
+                            <tr>
+                                <td><strong>난발치 (치근 만곡 등)</strong></td>
+                                <td>약 50,000원 ~ 65,000원</td>
+                                <td><strong>약 16,000원 ~ 22,000원</strong></td>
+                                <td>약 42,000원 ~ 55,000원</td>
+                                <td>약 3,000원 ~ 8,000원</td>
+                            </tr>
+                            <tr>
+                                <td><strong>부분 매복 사랑니</strong></td>
+                                <td>약 70,000원 ~ 90,000원</td>
+                                <td><strong>약 24,000원 ~ 33,000원</strong></td>
+                                <td>약 58,000원 ~ 75,000원</td>
+                                <td>약 5,000원 ~ 12,000원</td>
+                            </tr>
+                            <tr>
+                                <td><strong>완전 매복 (하악 신경 근접)</strong></td>
+                                <td>약 100,000원 ~ 140,000원</td>
+                                <td><strong>약 35,000원 ~ 52,000원</strong></td>
+                                <td>약 85,000원 ~ 120,000원</td>
+                                <td>약 8,000원 ~ 15,000원</td>
+                            </tr>
+                            <tr>
+                                <td><strong>비급여 지혈제 (옵션 추가)</strong></td>
+                                <td>약 20,000원 ~ 40,000원 (비급여)</td>
+                                <td><strong>전액 환자 부담 (선택 사항)</strong></td>
+                                <td>전액 환자 부담 (비급여)</td>
+                                <td>전액 자부담 (원칙상 면책)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>상급종합병원 대학병원 치과와 일반 로컬 의원의 차이점</h3>
+                <p>
+                    하악 매복 사랑니의 치근이 하치조신경관과 밀접하게 닿아 있거나 신경을 감싸고 있는 위험한 해부학적 구조를 가진 경우, 신경 손상으로 인한 안면 마비 및 감각 이상 위험 때문에 대학병원 구강악안면외과로 의뢰(리퍼)되는 경우가 있습니다.
+                </p>
+                <p>
+                    대학병원을 이용할 경우 진찰료 및 행위료에 상급종합병원 종별 가산율(약 30%)과 선택 진료비 성격의 항목이 추가되어 일반 동네 치과의원보다 본인부담 요금이 약 2배 이상 높게 책정됩니다. 그러나 이 역시 진료의뢰서를 지참하고 진행한 건강보험 급여 영역이므로 실손의료보험에서 병원급 공제 기준을 적용받아 상당 부분 환급받을 수 있습니다.
+                </p>
+            </section>
+
+            <!-- 섹션 4: 인터랙티브 비용 계산기 위젯 -->
+            <section id="section-calculator" class="section-block">
+                <h2>4. 2026 사랑니 발치 실시간 예상 비용 및 환급 계산기</h2>
+                <p>
+                    본인의 사랑니 매복 형태, 치료를 계획 중인 의료기관의 종류, 비급여 지혈제 선택 여부 및 가입한 실손보험 세대를 선택하면 예상되는 총 결제 금액과 실손 환급 예상액을 즉시 시뮬레이션 계산해 드립니다.
+                </p>
+
+                <div class="calc-widget">
+                    <h3>사랑니 치료비 및 실비 환급 계산기 (AI 연산 지원)</h3>
+                    <div class="calc-grid">
+                        <div class="calc-group">
+                            <label for="calc-tooth-type">사랑니 매복 상태 및 난이도</label>
+                            <select id="calc-tooth-type">
+                                <option value="simple">단순 발치 (똑바로 난 경우)</option>
+                                <option value="difficult">난발치 (뿌리가 휘거나 깊은 경우)</option>
+                                <option value="partial">부분 매복 (잇몸에 반쯤 묻힘)</option>
+                                <option value="complete" selected>완전 매복 (뼈 속에 완전히 묻힘 + CT)</option>
+                            </select>
+                        </div>
+                        <div class="calc-group">
+                            <label for="calc-hospital-type">방문 예정 의료기관</label>
+                            <select id="calc-hospital-type">
+                                <option value="clinic" selected>일반 동네 치과의원</option>
+                                <option value="hospital">치과병원 (중형급)</option>
+                                <option value="university">대학병원 치과 (상급종합)</option>
+                            </select>
+                        </div>
+                        <div class="calc-group">
+                            <label for="calc-insurance-gen">가입된 실손의료보험 세대</label>
+                            <select id="calc-insurance-gen">
+                                <option value="gen1">1세대 실손 (2009년 9월 이전 - 본인부담 거의 없음)</option>
+                                <option value="gen2">2세대 실손 (2009년 10월~2017년 3월 - 급여 90% 보상)</option>
+                                <option value="gen3">3세대 실손 (2017년 4월~2021년 6월 - 급여 80~90% 보상)</option>
+                                <option value="gen4" selected>4세대 실손 (2021년 7월 이후 - 급여 80% 보상)</option>
+                            </select>
+                        </div>
+                        <div class="calc-group">
+                            <label for="calc-collagen">비급여 콜라겐 지혈제 추가 여부</label>
+                            <select id="calc-collagen">
+                                <option value="0">미사용 (0원)</option>
+                                <option value="30000" selected>사용 (평균 30,000원 추가)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="button" class="calc-btn" onclick="calculateDentalCost()">예상 치료비 및 실비 환급액 계산하기</button>
+
+                    <div id="calc-result-box" class="calc-result">
+                        <div class="calc-result-title">[분석 결과] 실시간 견적 및 환급 예상액</div>
+                        <div class="calc-result-value" id="calc-total-display">치과 수납 예상액: 0원</div>
+                        <div class="calc-result-breakdown" id="calc-breakdown-display">
+                            상세 내역이 여기에 출력됩니다.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 섹션 5: 전문 치아보험 상품 및 질병수술비 특약 분석 -->
+            <section id="section-comparison-plans" class="section-block">
+                <h2>5. 주요 치아보험 브랜드 비교 및 질병수술비 특약 활용법</h2>
+                <p>
+                    신규 가입을 고려할 때 소비자들이 가장 많이 찾는 질문은 어떤 보험사의 상품이 제일 저렴한곳이며 할인 혜택이 많은가입니다. 라이나생명, 삼성화재, 현대해상, DB손해보험, KB손해보험, 메리츠화재 등 주요 금융사 브랜드별 다이렉트 치아보험 요금제 순위를 비교해 보면, 월 납입 보험료는 20대~30대 기준 평균 2만 원대에서 5만 원대로 책정됩니다.
+                </p>
+                <p>
+                    하지만 앞서 언급했듯이 순수 치아보험만으로는 사랑니 발치에 대한 큰 보상금을 기대하기 어렵습니다. 만약 사랑니 발치 과정에서 실질적인 정액 보험금을 지급받고자 한다면 일반 건강보험 내의 <strong>질병수술비 특약</strong>이나 <strong>질병 1-5종 수술비 특약(1종 내지 2종 수술비)</strong>을 확인해야 합니다.
+                </p>
+
+                <div class="info-panel teal">
+                    <h4>[질병수술비 및 종수술비에서 매복사랑니 보상 원리]</h4>
+                    <p>
+                        의학적으로 단순 발치는 수술로 인정되지 않으나, 잇몸을 절개하고 골(뼈)을 삭제하는 치조골 성형 및 매복치 절개 분할술은 한국표준질병사인분류(KCD) 질병코드 및 수술 행위 정의(절단, 절제 등의 조작)에 부합하여 <strong>1종 질병수술비(약 10만 원 ~ 30만 원)</strong> 청구 요건을 충족할 수 있습니다.
+                    </p>
+                </div>
+
+                <h3>계약 전 알릴 의무(고지의무)와 면책기간 주의사항</h3>
+                <p>
+                    치아보험 가입 시 고지의무 문진표는 통상 다음 3가지를 질의합니다.
+                </p>
+                <ul class="check-list">
+                    <li>최근 3개월 이내에 치과의사로부터 치료, 투약, 진단(충치, 발치 등)을 받은 사실이 있는가?</li>
+                    <li>최근 1년(12개월) 이내에 충치 또는 치주질환으로 치료나 투약을 받은 적이 있는가?</li>
+                    <li>최근 5년 이내에 치주질환으로 영구치를 상실했거나 치주수술을 받은 적이 있는가?</li>
+                </ul>
+                <p>
+                    만약 이미 사랑니 부위 통증으로 치과를 방문하여 엑스레이를 찍고 발치 일정을 예약한 상태에서 온라인 인터넷 사이트나 모바일 앱을 통해 신규 계약을 체결한다면, 이는 명백한 고지의무 위반에 해당합니다. 이 경우 계약금 환불 여부와 무관하게 계약이 강제 해지되며 위약금 분쟁이 발생할 수 있으므로 각별히 유의해야 합니다.
+                </p>
+            </section>
+
+            <!-- 섹션 6: 커뮤니티 후기 분석 및 온라인 청구 노하우 -->
+            <section id="section-community" class="section-block">
+                <h2>6. 커뮤니티 실사례 분석 및 모바일 앱 다이렉트 청구 꿀팁</h2>
+                <p>
+                    네이버 지식iN, 구글 검색, 토스 인슈어런스, 챗지피티 및 제미나이 등 다양한 AI 어시스턴트 플랫폼과 디시, 펨코, 보배드림 커뮤니티의 내돈내산 경험담을 종합하면, 사랑니 발치 후 보험금을 누락 없이 제일 스마트하게 수령하는 방법은 다음과 같은 순서로 귀결됩니다.
+                </p>
+
+                <div class="step-container">
+                    <div class="step-card">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h4>치과 데스크 서류 발급 요청</h4>
+                            <p>수납 시 실비 청구용 진료비 계산서/영수증, 진료비 세부내역서를 무료로 발급받고, 정액 수술비 청구 시 질병분류기호(K01.1 매복치 등)가 기재된 진료확인서나 처방전을 요청합니다.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h4>보험사 공식 모바일 앱 또는 통합 핀테크 플랫폼 접속</h4>
+                            <p>삼성화재, 메리츠, 현대해상, DB손해보험, KB손해보험 앱이나 카카오톡 청구 채널, 토스 앱의 병원비 돌려받기 메뉴를 실행합니다.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h4>스마트폰 촬영 후 1분 접수 완료</h4>
+                            <p>발급받은 영수증과 세부내역서를 카메라로 선명하게 촬영하여 업로드하면 영업일 기준 1~3일 이내에 지정 계좌로 보험금이 지급됩니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-panel rose">
+                    <h4>[과장 마케팅 주의: 현금지원 및 과도한 사은품 성지 주의]</h4>
+                    <p>
+                        인터넷 온라인 카페나 텔레그램, 인스타그램, 페이스북, 유튜브 등에서 치아보험 가입 시 첫 달 보험료 대납, 현금지원금, 고가의 백화점 상품권 지급 등의 이벤트를 홍보하는 이른바 성지 좌표 영업 행위는 보험업법 제98조(특별이익의 제공 금지)를 위반하는 불법 행위입니다. 이러한 불완전 판매 채널을 통해 가입할 경우 약정 기간 내 해지 시 불이익을 받거나 정상적인 보상 컨설팅을 받지 못할 수 있습니다.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 섹션 7: 자주 묻는 질문 5문 5답 (FAQ) -->
+            <section id="section-faq" class="section-block">
+                <h2>7. 자주 묻는 질문 (FAQ)</h2>
+                <div class="faq-container">
+                    <div class="faq-item active">
+                        <button class="faq-header" type="button">
+                            <span><span class="q-mark">질문</span> 사랑니 발치도 민영 치아보험에서 보장받을 수 있나요?</span>
+                        </button>
+                        <div class="faq-body">
+                            대부분의 민영 치아보험 주계약은 충치, 신경치료, 크라운, 임플란트 등 보존 및 보철치료를 주된 담보로 구성하기 때문에 단순 사랑니 발치는 직접적인 지급 대상에서 제외되는 경우가 많습니다. 다만 가입한 상품 내에 영구치 발거 치료비 특약이나 질병수술비 특약이 포함되어 있는 경우, 또는 치조골 절제가 동반되는 난발치 및 매복사랑니 수술의 경우 약관에 따라 정액 수술비나 발치 지원금이 지급될 수 있습니다.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-header" type="button">
+                            <span><span class="q-mark">질문</span> 사랑니 발치 비용을 실손의료보험(실비)으로 청구할 수 있나요?</span>
+                        </button>
+                        <div class="faq-body">
+                            네, 가능합니다. 사랑니 발치는 국민건강보험 요양급여 대상(급여 항목)으로 분류되므로, 치료 목적으로 치과의원이나 종합병원에서 발치한 경우 발생한 급여 본인부담금에 대해 실손의료보험의 보상을 받을 수 있습니다. 단, 비급여 항목으로 분류되는 콜라겐 지혈제나 특수 잇몸 봉합 재료 등은 가입 시점별 실손보험 약관의 치과 비급여 면책 규정에 따라 보상에서 제외될 수 있습니다.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-header" type="button">
+                            <span><span class="q-mark">질문</span> 매복사랑니 발치 시 1개당 평균적인 진료비와 본인부담금은 얼마인가요?</span>
+                        </button>
+                        <div class="faq-body">
+                            2026년 국민건강보험 수가 기준, 동네 치과의원에서 완전매복 사랑니를 발치할 경우 초진 진찰료, 파노라마 및 치과 CT 촬영, 국소마취, 치조골 삭제 및 치아 분할술을 포함하여 총 진료비는 약 6만 원에서 10만 원 선으로 산정되며, 이 중 환자가 부담하는 급여 본인부담금은 약 3만 원에서 5만 원 내외입니다. 병원급이나 대학병원 치과를 이용할 경우 종별 가산율이 적용되어 본인부담금이 7만 원에서 12만 원 이상으로 증가할 수 있습니다.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-header" type="button">
+                            <span><span class="q-mark">질문</span> 사랑니를 뽑기 직전에 치아보험에 가입해도 바로 혜택을 받을 수 있나요?</span>
+                        </button>
+                        <div class="faq-body">
+                            치아보험은 가입 후 역선택을 방지하기 위해 90일간의 면책기간과 1년(12개월) 또는 2년의 감액기간(50% 지급)을 둡니다. 이미 치과에서 사랑니 발치 진단을 받았거나 잇몸 염증으로 치료 중인 상태에서 계약을 체결하면 고지의무 위반으로 계약이 해지되거나 보장이 거절될 수 있습니다. 따라서 치료 계획이 잡히기 전 최소 수개월 전에 미리 가입 조건을 점검해야 합니다.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-header" type="button">
+                            <span><span class="q-mark">질문</span> 사랑니 발치 후 보험금 청구 시 치과에서 준비해야 할 필수 서류는 무엇인가요?</span>
+                        </button>
+                        <div class="faq-body">
+                            실손의료보험 청구를 위해서는 진료비 계산서 및 영수증, 진료비 세부내역서가 필수적입니다. 만약 질병수술비나 치아보험 발치 특약을 함께 청구한다면 질병분류코드(K01.1 등)와 구체적인 수술명(매복치 발치술, 치조골 성형 등)이 기재된 처방전, 진단서 또는 치과치료확인서를 발급받아 보험사 모바일 앱이나 홈페이지를 통해 접수하면 됩니다.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 외부 신뢰할 수 있는 공식 사이트 링크 섹션 -->
+            <section class="external-links">
+                <h3>공식 검증 기관 및 권위 있는 외부 참조 사이트</h3>
+                <p>더 상세하고 공신력 있는 제도적 정보와 치과 진료 지침은 아래 공식 공공기관 및 레퍼런스 포털에서 확인하실 수 있습니다.</p>
+                <ul>
+                    <li>
+                        <strong>치아보험 청구 가이드 센터:</strong> 
+                        <a href="https://dentalbestsbohumz.directreliable.com" target="_blank" rel="noopener noreferrer">https://insu.reliabledone.com/dental-claim-guide [상세 보상 매뉴얼 확인]</a>
+                    </li>
+                    <li>
+                        <strong>건강보험심사평가원 (HIRA):</strong> 
+                        <a href="https://www.hira.or.kr/" target="_blank" rel="noopener noreferrer">https://www.hira.or.kr [치과 비급여 진료비 정보 및 급여 기준 검색]</a>
+                    </li>
+                    <li>
+                        <strong>국민건강보험공단 (NHIS):</strong> 
+                        <a href="https://www.nhis.or.kr/" target="_blank" rel="noopener noreferrer">https://www.nhis.or.kr [건강보험 요양급여 본인부담률 산정 안내]</a>
+                    </li>
+                    <li>
+                        <strong>금융감독원 (FSS) 금융소비자정보포털:</strong> 
+                        <a href="https://www.fss.or.kr/" target="_blank" rel="noopener noreferrer">https://www.fss.or.kr [실손의료보험 표준약관 및 분쟁 조정 사례]</a>
+                    </li>
+                    <li>
+                        <strong>나무위키 (Namuwiki) 사랑니 백과:</strong> 
+                        <a href="https://namu.wiki/w/%EC%82%AC%EB%9E%91%EB%8B%88" target="_blank" rel="noopener noreferrer">https://namu.wiki/w/사랑니 [해부학적 구조 및 발치 수술 과정 정보]</a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 연관 태그 클라우드 -->
+            <div class="tag-cloud">
+                <span class="tag-badge">#치아보험사랑니</span>
+                <span class="tag-badge">#매복사랑니발치비용</span>
+                <span class="tag-badge">#사랑니실비청구</span>
+                <span class="tag-badge">#치과비급여지혈제</span>
+                <span class="tag-badge">#질병수술비특약</span>
+                <span class="tag-badge">#2026건강보험수가</span>
+                <span class="tag-badge">#치아보험비교추천</span>
+                <span class="tag-badge">#치과CT실비적용</span>
+                <span class="tag-badge">#다이렉트치아보험</span>
+                <span class="tag-badge">#사랑니내돈내산후기</span>
+            </div>
+        </article>
+
+        <!-- 사이드바 -->
+        <aside>
+            <!-- 목차 바로가기 -->
+            <div class="sidebar-card">
+                <h3>콘텐츠 목차</h3>
+                <ul class="toc-list">
+                    <li><a href="#section-basics">1. 사랑니 발치와 치아보험 구조</a></li>
+                    <li><a href="#section-comparison">2. 치아보험 vs 실비 비교</a></li>
+                    <li><a href="#section-cost">3. 2026 예상 비용 및 요금표</a></li>
+                    <li><a href="#section-calculator">4. 실시간 비용 계산기</a></li>
+                    <li><a href="#section-comparison-plans">5. 보험사 브랜드 및 특약 분석</a></li>
+                    <li><a href="#section-community">6. 청구 서류 및 모바일 신청법</a></li>
+                    <li><a href="#section-faq">7. 자주 묻는 질문 (FAQ)</a></li>
+                </ul>
+            </div>
+
+            <!-- 빠른 상담 및 전문 컨설팅 박스 -->
+            <div class="quick-contact-box">
+                <h4>전문 상담 지원</h4>
+                <p>가입 중인 보험 증권을 바탕으로 사랑니 발치 및 치과 수술비 청구 가능 여부를 무료로 분석해 드립니다.</p>
+                <a href="https://insu.reliabledone.com/dental-claim-guide" class="quick-contact-btn">내 보장 내역 진단하기</a>
+            </div>
+
+            <!-- 핵심 요약 카드 -->
+            <div class="sidebar-card" style="background-color: var(--neutral-50);">
+                <h3 style="font-size: 1rem; color: var(--primary-dark);">핵심 요약 3줄 가이드</h3>
+                <p style="font-size: 0.88rem; line-height: 1.7; margin-bottom: 8px;">
+                    [1] 사랑니 발치는 건강보험 100% 급여 대상이므로 실손보험(실비)으로 본인부담금 대부분을 환급받을 수 있습니다.
+                </p>
+                <p style="font-size: 0.88rem; line-height: 1.7; margin-bottom: 8px;">
+                    [2] 순수 치아보험은 면책일 수 있으나, 질병수술비 특약(1종)이 있다면 추가 정액 보험금 수령이 가능합니다.
+                </p>
+                <p style="font-size: 0.88rem; line-height: 1.7; margin-bottom: 0;">
+                    [3] 비급여 지혈제(3~4만 원)는 실비 면책 대상일 수 있으니 치과 결제 전 의사와 상담하세요.
+                </p>
+            </div>
+        </aside>
+    </div>
+</main>
+
+
+  
+<!-- 프론트엔드 인터랙션 스크립트 -->
+<script>
+    // FAQ 아코디언 토글 동작
+    document.querySelectorAll('.faq-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const currentItem = header.parentElement;
+            const isOpen = currentItem.classList.contains('active');
+            
+            // 모든 항목 닫기
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // 클릭한 항목 토글
+            if (!isOpen) {
+                currentItem.classList.add('active');
+            }
+        });
+    });
+
+    // 사랑니 비용 계산기 로직
+    function calculateDentalCost() {
+        const toothType = document.getElementById('calc-tooth-type').value;
+        const hospitalType = document.getElementById('calc-hospital-type').value;
+        const insuranceGen = document.getElementById('calc-insurance-gen').value;
+        const collagenCost = parseInt(document.getElementById('calc-collagen').value, 10);
+
+        // 기본 급여 진료비 (공단부담 + 본인부담 기본값)
+        let baseTotal = 40000;
+        let baseCopay = 13000;
+
+        if (toothType === 'difficult') {
+            baseTotal = 60000;
+            baseCopay = 19000;
+        } else if (toothType === 'partial') {
+            baseTotal = 80000;
+            baseCopay = 28000;
+        } else if (toothType === 'complete') {
+            baseTotal = 120000;
+            baseCopay = 42000;
+        }
+
+        // 병원 종별 가산율 적용
+        let hospitalMultiplier = 1.0;
+        let minDeductible = 10000; // 실비 의원 최소 공제액
+
+        if (hospitalType === 'hospital') {
+            hospitalMultiplier = 1.35;
+            baseCopay = Math.round(baseCopay * hospitalMultiplier);
+            minDeductible = 15000;
+        } else if (hospitalType === 'university') {
+            hospitalMultiplier = 2.1;
+            baseCopay = Math.round(baseCopay * hospitalMultiplier);
+            minDeductible = 20000;
+        }
+
+        // 환자 총 결제액 (급여 본인부담금 + 비급여 지혈제)
+        const patientTotalPay = baseCopay + collagenCost;
+
+        // 실손의료보험 환급액 계산 (급여 본인부담금 기준)
+        let refundAmount = 0;
+        if (insuranceGen === 'gen1') {
+            refundAmount = Math.max(0, baseCopay - 5000);
+        } else if (insuranceGen === 'gen2') {
+            const deduction = Math.max(minDeductible, Math.round(baseCopay * 0.1));
+            refundAmount = Math.max(0, baseCopay - deduction);
+        } else if (insuranceGen === 'gen3') {
+            const deduction = Math.max(minDeductible, Math.round(baseCopay * 0.15));
+            refundAmount = Math.max(0, baseCopay - deduction);
+        } else if (insuranceGen === 'gen4') {
+            const deduction = Math.max(minDeductible, Math.round(baseCopay * 0.2));
+            refundAmount = Math.max(0, baseCopay - deduction);
+        }
+
+        const netActualCost = patientTotalPay - refundAmount;
+
+        // 결과 표시
+        const resultBox = document.getElementById('calc-result-box');
+        const totalDisplay = document.getElementById('calc-total-display');
+        const breakdownDisplay = document.getElementById('calc-breakdown-display');
+
+        totalDisplay.innerText = `치과 총 결제 예상액: ${patientTotalPay.toLocaleString()}원`;
+        breakdownDisplay.innerHTML = `
+            - 급여 본인부담금: 약 ${baseCopay.toLocaleString()}원<br>
+            - 비급여 지혈제 비용: ${collagenCost.toLocaleString()}원<br>
+            - 실손보험(실비) 예상 환급액: 약 ${refundAmount.toLocaleString()}원<br>
+            <strong>최종 본인 실부담 예상 체감액: 약 ${netActualCost.toLocaleString()}원</strong><br>
+            <span style="font-size:0.8rem; color:#64748b;">(단, 실제 청구 시 세부 검사 항목, 처방약제비, 치과별 비급여 단가에 따라 약간의 차이가 발생할 수 있습니다.)</span>
+        `;
+
+        resultBox.classList.add('active');
+    }
+</script>
+
+  
